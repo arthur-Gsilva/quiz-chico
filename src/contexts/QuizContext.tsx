@@ -1,6 +1,6 @@
 import { createContext, useReducer, ReactNode } from "react";
 
-import { quizReducer, QuizState } from "@/reducers/QuizReducer";
+import { QuizAction, quizReducer, QuizState } from "@/reducers/QuizReducer";
 
 const initialState: QuizState = {
     currentQuestion: 0,
@@ -11,7 +11,7 @@ const initialState: QuizState = {
 
 export const QuizContext = createContext<{
     state: QuizState;
-    dispatch: React.Dispatch<any>;
+    dispatch: React.Dispatch<QuizAction>;
 }>({
     state: initialState,
     dispatch: () => null,
